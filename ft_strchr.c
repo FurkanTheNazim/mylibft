@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:10:38 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/06/02 16:39:06 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/06/05 23:19:26 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,17 @@ char *ft_strchr(const char *s, int c)
     }
     return NULL;
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    char *s = "faam";
-    char *ret = ft_strchr(s, 'aa');
+    char *s = "fractol";
+    char *a = "fractol";
+    char *ret = ft_strchr(s, 'a');
+    printf("ret: %s\n", ret);
+    ret = strchr(a, 'a');
     printf("ret: %s\n", ret);
 }
+    */

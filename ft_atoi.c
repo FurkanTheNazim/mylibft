@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 12:06:10 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/06/01 12:07:01 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/06/03 18:30:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
 
-int
-	ft_atoi(const char *str)
+int ft_atoi(const char *str)
 {
 	int	i;
 	int	is_neg;

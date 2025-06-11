@@ -3,24 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 13:35:26 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/06/01 13:47:33 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:48:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_substr(char const *s, unsigned int start, size_t len)
-
-size_t slen;
+char *ft_substr (char const *s, unsigned int start, size_t len)
 {
-    while (s != NULL)
+    size_t i;
+    char *str;
+
+    str = malloc (sizeof(char) * (ft_strlen(s) - start + 1));
+    if (!s)
+        return (NULL);
+    i = 0;
+    while (i < len)
     {
-        slen = ft_strlen(s);
-        if (start >= slen)
-            return (NULL);
-        else if (slen = )
+        str[i++] = s[start++];
     }
-    return (NULL);
+    return (str);
 }
+#include <stdio.h>
+int main()
+{
+    char *pot = "furkan harikasin";
+    printf("subs: %s\n", ft_substr(pot, 2, 7));
+
