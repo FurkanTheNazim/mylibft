@@ -67,7 +67,7 @@ Parameters s: The string to be split.
 }
 
 #include <stdio.h>
-int main ()Ü
+int main ()
 {
     char *array = "hello world"
 }

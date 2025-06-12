@@ -1,27 +1,27 @@
-NAME	:= libft.a
-SRCS	:= main.c
-OBJS	:= main.o
+NAME	= libft.a
 
-CC := clang
-CFLAGS := -Wall -Werror -Wextra
 
-RM := rm -f
-MAKEFLAGS += --noprint-directory
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+SRCS	:= ft_atoi.c/ft_isdigit.c
+OBJS	:= $(SRCS: .c=.o)
 
 all: $(NAME)
 
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+	ar rcs $(NAME) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS)
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
+	
+re: fclean all
 
-re:
-	$(MAKE) fclean
-	$(MAKE) all
-
-.PHONY: clean fclean re
+.PHONY: all clean fclean re

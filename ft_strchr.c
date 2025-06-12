@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:10:38 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/06/05 23:19:26 by marvin           ###   ########.fr       */
+/*   Updated: 2025/06/12 19:31:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char *ft_strchr(const char *s, int c)
     return NULL;
 }
 
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <string.h>
 
 int main()
@@ -34,4 +35,4 @@ int main()
     ret = strchr(a, 'a');
     printf("ret: %s\n", ret);
 }
-    */
+*/
