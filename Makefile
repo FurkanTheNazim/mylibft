@@ -1,3 +1,4 @@
+NAME	:= libft.a
 SRCS	:= main.c
 OBJS	:= main.o
 
