@@ -31,4 +31,24 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     string[i] = '\0';
     return (string);
 }
+char my_func(unsigned i, char c)
+{
+    if (i % 2 == 0)
+        return ft_toupper(c);
+    else
+        return ft_tolower(c);
+}
+#include <stdio.h>
+int main(void)
+{
+    char *s = "Hello42";
+    char *result = ft_strmapi(s, my_func);
 
+    if (result)
+    {
+        printf("Orjinal %s\n", s);
+        printf("Sonuç  %s\n", result);
+        free(result);
+    }
+    
+}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/13 10:55:56 by marvin            #+#    #+#             */
+/*   Updated: 2025/06/13 10:55:56 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 void *ft_memset(void *b, int c, size_t n)
 {
@@ -13,9 +25,8 @@ void *ft_memset(void *b, int c, size_t n)
     }
     return (b);
 }
-
+/*
 #include <stdio.h>
-
 int main()
 {
     char str[13];
@@ -26,3 +37,4 @@ int main()
 
     return 0;
 }
+*/

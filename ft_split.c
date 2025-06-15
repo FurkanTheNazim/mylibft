@@ -41,35 +41,8 @@ char **ft_split(char const *s, char c)
     if (!s)
         return (NULL);
     words = count_words(s, c);
-    **mem = malloc (sizeof(char) * words + 1);
+    mem = malloc (sizeof(char) * words + 1);
     if (!mem)
         return (NULL); 
+    return (mem);
 }
-/*
-char **ft_split(char const *s, char c)
-{
-    if (!s)
-    return (NULL);
-
-Function name ft_split
-Prototype char **ft_split(char const *s, char c);
-Turn in files -
-Parameters s: The string to be split.
-    c: The delimiter character.
-    Return value The array of new strings resulting from the split.
-    NULL if the allocation fails.
-    External functs. malloc, free
-    Description Allocates memory (using malloc(3)) and returns an
-    array of strings obtained by splitting ’s’ using
-    the character ’c’ as a delimiter. The array must
-    end with a NULL pointer.
-    
-}
-
-#include <stdio.h>
-int main ()
-{
-    char *array = "hello world"
-}
-
-*/
