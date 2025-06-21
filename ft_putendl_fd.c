@@ -6,22 +6,16 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 17:36:19 by marvin            #+#    #+#             */
-/*   Updated: 2025/06/13 17:36:19 by marvin           ###   ########.fr       */
+/*   Updated: 2025/06/16 20:37:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "libft.h"
-void ft_putendl_fd(char *s, int fd)
-{
-    size_t i;
 
-    i = 0;
-    while(s[i] != '\0')
-    {
-        write(fd, &s[i], 1);
-        i++;
-    }
-    write(fd, "\n", 1);
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	ft_putstr_fd (s, fd);
+	ft_putchar_fd ('\n', fd);
 }

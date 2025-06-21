@@ -6,25 +6,23 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 19:09:26 by marvin            #+#    #+#             */
-/*   Updated: 2025/06/06 19:09:26 by marvin           ###   ########.fr       */
+/*   Updated: 2025/06/18 10:42:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-static size_t count_words(char const *s, char c) //static 
-{
-    size_t i; // index
-    size_t w_count; //kelime sayar
 
-    i = 0;
-    w_count = 0;
-    while (s[i] || s[i] == c)
+static size_t	count_words(char const *s, char c)
+{
+    size_t	i = 0;
+    size_t	w_count = 0;
+
+    while (s[i])
     {
-		while (s[i] && s[i] == c)
+        while (s[i] && s[i] == c)
             i++;
-        if ( s[i] && s[i] != c)
-		{
+        if (s[i] && s[i] != c)
+        {
             w_count++;
             while (s[i] && s[i] != c)
                 i++;
@@ -33,16 +31,56 @@ static size_t count_words(char const *s, char c) //static
     return (w_count);
 }
 
-char **ft_split(char const *s, char c)
+static char	*word_dup(const char *s, size_t start, size_t end)
 {
-    size_t words;
-    char **mem;
+    char	*word;
+    size_t	i = 0;
+
+    word = malloc(end - start + 1);
+    if (!word)
+        return (NULL);
+    while (start < end)
+        word[i++] = s[start++];
+    word[i] = '\0';
+    return (word);
+}
+
+static void	free_all(char **arr, size_t j)
+{
+    while (j--)
+        free(arr[j]);
+    free(arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+    size_t	i = 0, j = 0, start = 0;
+    size_t	words;
+    char	**arr;
 
     if (!s)
         return (NULL);
     words = count_words(s, c);
-    mem = malloc (sizeof(char) * words + 1);
-    if (!mem)
-        return (NULL); 
-    return (mem);
+    arr = malloc(sizeof(char *) * (words + 1));
+    if (!arr)
+        return (NULL);
+    while (s[i] && j < words)
+    {
+        while (s[i] && s[i] == c)
+            i++;
+        start = i;
+        while (s[i] && s[i] != c)
+            i++;
+        if (i > start)
+        {
+            arr[j] = word_dup(s, start, i);
+            if (!arr[j++])
+            {
+                free_all(arr, j - 1);
+                return (NULL);
+            }
+        }
+    }
+    arr[j] = NULL;
+    return (arr);
 }
