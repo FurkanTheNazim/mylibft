@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 10:55:56 by marvin            #+#    #+#             */
-/*   Updated: 2025/06/16 17:08:15 by marvin           ###   ########.fr       */
+/*   Updated: 2025/06/23 16:23:06 by mahmmous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[13];
-
-	ft_memset(str, 'A', 8);
-	str[8] = '\0';
-	printf("%s", str);
-	return (0);
-}
-*/
