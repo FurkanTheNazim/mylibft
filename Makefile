@@ -8,7 +8,7 @@ SRCS = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_striteri.c ft_strmapi.c ft_strtrim.c ft_split.c ft_itoa.c \
 
-OBJS = $(SRCS: .c  = .o)
+OBJS = $(SRCS:.c=.o)
 CC = cc
 ARFLAGS = -rc
 CFLAGS = -Wall -Wextra -Werror
@@ -19,7 +19,7 @@ $(NAME):
 	$(CC) $(CFLAGS) -c $(SRCS)
 	ar $(ARFLAGS) $(NAME) $(OBJS)
 
-clean:<j
+clean:
 	$(RM) $(OBJS)
 
 fclean: clean
